@@ -1,0 +1,17 @@
+streamlit>=1.30.0
+pandas>=1.5.0
+numpy>=1.20.0
+scikit-learn>=1.0.0
+plotly>=5.0.0
+google-generativeai>=0.3.0
+supabase-py>=1.0.0
+tiktoken>=0.4.0
+crawl4ai>=0.6.0
+nest_asyncio>=1.5.0
+beautifulsoup4>=4.9.0
+# Add tldextract if it was confirmed as a direct dependency, otherwise it might be a sub-dependency of crawl4ai
+tldextract>=3.1.0
+# Add any other direct dependencies discovered during testing/development
+# Playwright browsers need to be installed separately (e.g., playwright install)
+# For crawl4ai, specific versions of playwright might be bundled or required.
+# Check crawl4ai documentation if specific playwright version is needed.
