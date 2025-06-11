@@ -1,0 +1,44 @@
+# Basic Netlify configuration file.
+# This configuration assumes you might use Netlify for a static landing page
+# or as a frontend that interacts with an externally hosted Streamlit application.
+# Deploying a full, stateful Streamlit application directly on Netlify's
+# standard infrastructure can be complex.
+
+[build]
+  # Command to build your static site (if you have one).
+  # If you only have the Streamlit app in this repo and host it elsewhere,
+  # you might not need a complex build command here unless you're also
+  # building a landing page from this repo.
+  command = "echo 'Optional: Add your static site build command here (e.g., npm run build, hugo, etc.)'"
+
+  # Directory that contains the deploy-ready HTML files and assets from your build.
+  # This is typically 'public', 'dist', '_site', 'build', etc., depending on your static site generator.
+  # If you're just using Netlify to manage a domain and redirect, this might be less relevant
+  # or point to a very simple placeholder page.
+  publish = "static_landing_page/" # Create this directory with an index.html if you need a landing page
+
+[dev]
+  # If you use `netlify dev` locally, this can proxy to your Streamlit app
+  # command = "streamlit run app.py" # If app.py is at the root of seo_app/
+  # port = 8501 # Default Streamlit port
+
+# Example: Redirect a path on your Netlify site to your externally hosted Streamlit app.
+# Un-comment and update if you use this pattern.
+# [[redirects]]
+#   from = "/app/*"  # Path on your Netlify site
+#   to = "YOUR_EXTERNAL_STREAMLIT_APP_URL/:splat"  # URL of your deployed Streamlit app
+#   status = 200  # Use 200 for proxying (URL masking), or 301/302 for actual redirect
+#   force = true # Optional: ensures this rule is applied even if a file exists at the 'from' path
+
+# If you were to use Netlify Functions for the Python backend (re-architecting the app):
+# [functions]
+#   directory = "netlify/functions" # Folder where your serverless functions would live
+
+# Note on deploying Streamlit directly to Netlify:
+# As of late 2023/early 2024, Netlify's primary strength is static sites and serverless functions.
+# While they offer Python runtime for functions and are expanding web app support,
+# a full Streamlit app (which is a running Python server) is often better suited for platforms
+# like Streamlit Cloud, Heroku, Google Cloud Run, AWS ECS, etc.
+# If Netlify introduces more direct support for Python web servers like Streamlit,
+# this configuration would need to be updated according to their guidelines.
+```
