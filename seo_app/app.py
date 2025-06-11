@@ -328,3 +328,4 @@ elif app_mode == "Keyword Analysis":
 # ... (Rest of the app.py, like sidebar info, etc.) ...
 st.sidebar.markdown("---")
 st.sidebar.info("SEO Embeddings App v0.5.0") #Incremented version
+```
